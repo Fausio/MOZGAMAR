@@ -11487,7 +11487,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sInfoEmpty": "Showing 0 to 0 of 0 entries",
+			"sInfoEmpty": "Mostrando 0 a 0 de 0 entradas",
 	
 	
 			/**
@@ -11508,8 +11508,8 @@
 			 *        }
 			 *      } );
 			 *    } );
-			 */
-			"sInfoFiltered": "(filtered from _MAX_ total entries)",
+			 */                         
+			"sInfoFiltered": "(filtrado de _MAX_ total de entradas)",
 	
 	
 			/**
@@ -11627,7 +11627,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sLengthMenu": "Show _MENU_ entries",
+			"sLengthMenu": "Mostrar _MENU_ entradas",
 	
 	
 			/**
