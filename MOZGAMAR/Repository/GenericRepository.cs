@@ -102,8 +102,8 @@ namespace MOZGAMAR.Repository
         public void Update(Tbl_Entity entity)
         {
             _dbset.Attach(entity);
-            _DBEntity.Entry(entity).State =
-                EntityState.Modified;
+            _DBEntity.Entry(entity).State = EntityState.Modified;
+            _DBEntity.SaveChanges();
         }
 
         public void UpdateByWhereClause(Expression<Func<Tbl_Entity, bool>> wherePredict, Action<Tbl_Entity> ForEachPredict)
@@ -113,7 +113,7 @@ namespace MOZGAMAR.Repository
 
         public IEnumerable<Tbl_Entity> GetRecordsToShow(int pageNo, int curentPage, Expression<Func<Tbl_Entity, bool>> wherePredict, Expression<Func<Tbl_Entity, int>> orderByPredict)
         {
-            if (wherePredict !=null)
+            if (wherePredict != null)
             {
                 return _dbset.OrderBy(orderByPredict).Where(wherePredict).ToList();
             }
@@ -122,5 +122,11 @@ namespace MOZGAMAR.Repository
                 return _dbset.OrderBy(orderByPredict).ToList();
             }
         }
+
+        public IEnumerable<Tbl_Entity> GetProduct()
+        {
+            return _dbset.ToList();
+        }
+
     }
 }
