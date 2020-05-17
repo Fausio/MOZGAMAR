@@ -14,18 +14,9 @@ namespace MOZGAMAR.DAL
     
     public partial class Category
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Category()
-        {
-            this.Poducts = new HashSet<Poduct>();
-        }
-    
         public int CategoryId { get; set; }
         public string Name { get; set; }
         public Nullable<bool> IsActive { get; set; }
         public Nullable<bool> ISDelete { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Poduct> Poducts { get; set; }
     }
 }

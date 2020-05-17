@@ -66,7 +66,7 @@
           <Property Name="Description" Type="varchar(max)" />
           <Property Name="ProductImage" Type="varchar(max)" />
           <Property Name="IsFeatured" Type="bit" />
-          <Property Name="Quality" Type="int" />
+          <Property Name="Quantity" Type="int" />
           <Property Name="Price" Type="decimal" Precision="18" Scale="0" />
         </EntityType>
         <EntityType Name="Roles">
@@ -187,7 +187,6 @@
           <Property Name="Name" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
           <Property Name="IsActive" Type="Boolean" />
           <Property Name="ISDelete" Type="Boolean" />
-          <NavigationProperty Name="Poducts" Relationship="Self.FK__Poduct__Category__145C0A3F" FromRole="Category" ToRole="Poduct" />
         </EntityType>
         <EntityType Name="Member">
           <Key>
@@ -226,10 +225,10 @@
           <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="ProductImage" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="IsFeatured" Type="Boolean" />
-          <Property Name="Quality" Type="Int32" />
           <NavigationProperty Name="Carts" Relationship="Self.FK__Cart__PoductId__24927208" FromRole="Poduct" ToRole="Cart" />
           <NavigationProperty Name="Category" Relationship="Self.FK__Poduct__Category__145C0A3F" FromRole="Poduct" ToRole="Category" />
           <Property Name="Price" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Quantity" Type="Int32" />
         </EntityType>
         <EntityType Name="Role">
           <Key>
@@ -382,6 +381,7 @@
           <EntitySetMapping Name="Poducts">
             <EntityTypeMapping TypeName="MOZGAMERModel.Poduct">
               <MappingFragment StoreEntitySet="Poduct">
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
                 <ScalarProperty Name="Price" ColumnName="Price" />
                 <ScalarProperty Name="PoductId" ColumnName="PoductId" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -393,7 +393,6 @@
                 <ScalarProperty Name="Description" ColumnName="Description" />
                 <ScalarProperty Name="ProductImage" ColumnName="ProductImage" />
                 <ScalarProperty Name="IsFeatured" ColumnName="IsFeatured" />
-                <ScalarProperty Name="Quality" ColumnName="Quality" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
