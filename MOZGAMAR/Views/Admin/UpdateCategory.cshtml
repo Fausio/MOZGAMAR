@@ -10,34 +10,42 @@
 
     <ol class="breadcrumb">
         <li class="breadcrumb-item">
-            <a href="../Admin/Dashboard">Dashboard</a>
+            <a href="../Admin/Dashboard">painel de controle</a>
         </li>
         <li class="breadcrumb-item">
             <a href="../Admin/Category">Categorias</a>
         </li>
-        <li class="breadcrumb-item active">Adicionar nova Categoria</li>
+        @if (Model.CategoryId == 0)
+        {
+            <li class="breadcrumb-item active">Adicionar nova Categoria</li>
+        }
+        else
+        {
+            <li class="breadcrumb-item active">Editar Categoria</li>
+        }
+
 
     </ol>
     <!-- DataTables Example -->
     <div class="card mb-3">
         <div class="card-header">
-            <i class="fas fa-table"></i>
+            <i class="fas fa-boxes"></i>
             Adicionar nova Categoria
         </div>
         <div class="card-body">
-            @using (Html.BeginForm("UpdateCategory", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            @using (Html.BeginForm("UpdateOrSaveCategory", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
             {
-                <div class="table-responsive">
-                    @Html.HiddenFor(m => m.CategoryId)
-                    <div class="form-group">
-                        <label class="control-label"> Nome </label>
-                        @Html.TextBoxFor(m => m.Name, new { @class = "form-control", PlaceHolder = "escreva o nome da categoria", required = "Obrigatório", autofocus = "autofocus" })
-                        @Html.ValidationMessageFor(m => m.Name, "", new { @class = "text-danger" })
-                    </div>
-
-                    <a onclick="window.history.back();" class="btn btn-danger">Cancelar</a>
-                    <input type="submit" class="btn btn-primary" value="Gravar" />
+            <div class="table-responsive">
+                @Html.HiddenFor(m => m.CategoryId)
+                <div class="form-group">
+                    <label class="control-label"> Nome </label>
+                    @Html.TextBoxFor(m => m.Name, new { @class = "form-control", PlaceHolder = "escreva o nome da categoria", required = "Obrigatório", autofocus = "autofocus" })
+                    @Html.ValidationMessageFor(m => m.Name, "", new { @class = "text-danger" })
                 </div>
+
+                @Html.ActionLink("Cancelar", "Category", routeValues: null, htmlAttributes: new { @class = "btn btn-danger", @role = "button" })
+                <input type="submit" class="btn btn-success" value="Gravar" />
+            </div>
             }
 
         </div>

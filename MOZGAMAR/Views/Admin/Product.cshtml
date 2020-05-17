@@ -1,25 +1,28 @@
-﻿@model List<MOZGAMAR.DAL.Category>
+﻿@model List<MOZGAMAR.DAL.Poduct>
+
 @{
-    ViewBag.Title = "Category";
+    ViewBag.Title = "Product";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<div class="container-fluid">
-    <!-- Breadcrumbs-->
 
+
+<!-- Breadcrumbs-->
+<div class="container-fluid">
     <ol class="breadcrumb">
         <li class="breadcrumb-item">
             <a href="../Admin/Dashboard">painel de controle</a>
         </li>
-        <li class="breadcrumb-item active">Categorias</li>
+        <li class="breadcrumb-item active">Produtos</li>
 
     </ol>
+
     <!-- DataTables Example -->
     <div class="card mb-3">
         <div class="card-header">
-            <i class="fas fa-boxes"></i>
+            <i class="fas fa-table"></i>
             Detalhes da categoria
-            <a href="../Admin/AddCategory" class="btn btn-info pull-right fa fa-plus"> Adicionar Nova</a>
+            <a href="../Admin/CreateProduct" class="btn btn-info pull-right fa fa-plus"> Adicionar Novo</a>
         </div>
         <div class="card-body">
             <div class="table-responsive">
@@ -27,7 +30,7 @@
                     <thead>
                         <tr>
                             <th>Indice</th>
-                            <th>Nome da Categoria</th>
+                            <th>Nome do produto</th>
                             <th>Ação</th>
 
                         </tr>
@@ -35,7 +38,7 @@
                     <tfoot>
                         <tr>
                             <th>Indice</th>
-                            <th>Nome da Categoria</th>
+                            <th>Nome do produto</th>
                             <th>Ação</th>
                         </tr>
                     </tfoot>
@@ -44,14 +47,13 @@
                         {
 
                             <tr>
-                                <td>@(Model.IndexOf(item)+1)</td>
+                                <td>@(Model.IndexOf (item)+1)</td>
                                 <td>@item.Name</td>
-                                <td> 
-                                    @Html.ActionLink("Editar", "UpdateOrSaveCategory", new { Id = item.CategoryId }, htmlAttributes: new { @class = "btn btn-primary", @role = "button" })
+                                <td>
+                                    @Html.ActionLink("Editar", "UpdateProduct", new { Id = item.PoductId }, htmlAttributes: new { @class = "btn btn-primary", @role = "button" })
                                 </td>
+                            </tr>
 
-
-                            </tr> 
                         }
 
                     </tbody>

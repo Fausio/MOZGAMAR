@@ -15,25 +15,38 @@ namespace MOZGAMAR.Controllers
     {
 
         public GenericUnitOfWork _unitOfWork = new GenericUnitOfWork();
+
+        public List<SelectListItem> GetCategoty()
+        {
+            List<SelectListItem> selectListItems = new List<SelectListItem>();
+
+            foreach (var item in _unitOfWork.GetRepositoryInstance<Category>().GetAllRecords().Where(x => x.IsActive == true))
+            {
+                selectListItems.Add(new SelectListItem { Value = item.CategoryId.ToString(), Text = item.Name });
+            }
+
+            return selectListItems;
+        }
+
         // GET: Admin
         public ActionResult Dashboard()
         {
             return View();
         }
 
+
+
+        #region Category
         public ActionResult Category()
         {
-            List<Category> allcategories = _unitOfWork.GetRepositoryInstance<Category>().GetAllRecordsIQueryable().Where(x => x.ISDelete == false).ToList();
+            List<Category> allcategories = _unitOfWork.GetRepositoryInstance<Category>().GetAllRecordsIQueryable().Where(x => x.IsActive == true).ToList();
             return View(allcategories);
         }
-
         public ActionResult AddCategory()
         {
-            return UpdateCategory(0);
+            return UpdateOrSaveCategory(0);
         }
-
-
-        public ActionResult UpdateCategory(int Id)
+        public ActionResult UpdateOrSaveCategory(int Id)
         {
             CategoryDetails cd;
             if (Id != 0 & Id > 0)
@@ -48,6 +61,67 @@ namespace MOZGAMAR.Controllers
             return View("UpdateCategory", cd);
 
         }
+        [HttpPost]
+        public ActionResult UpdateOrSaveCategory(Category category)
+        {
+            if (category.CategoryId > 0)
+            {
+                category.IsActive = true;
+                _unitOfWork.GetRepositoryInstance<Category>().Update(category);
+            }
+            else
+            {
+                _unitOfWork.GetRepositoryInstance<Category>().Add(category);
+            }
 
-}
+            return RedirectToAction("Category");
+        }
+        #endregion
+
+
+        #region Product
+        public ActionResult Product()
+        {
+            return View(_unitOfWork.GetRepositoryInstance<Poduct>().GetProduct());
+        }
+        public ActionResult CreateProduct()
+        {
+            return UpdateProduct(0);
+        }
+        public ActionResult UpdateProduct(int id)
+        {
+            ViewBag.GetCategoty = GetCategoty();
+
+            Poduct product;
+            if (id == 0)
+            {
+                product = new Poduct();
+            }
+            else
+            {
+                product = _unitOfWork.GetRepositoryInstance<Poduct>().GetFirstOrDefault(id);
+            }
+
+            return View("UpdateProduct", product);
+        }
+        [HttpPost]
+        public ActionResult UpdateOrSaveProduct(Poduct product)
+        {
+            if (product.PoductId > 0)
+            {
+                product.ModifiedDate = DateTime.Now;
+                _unitOfWork.GetRepositoryInstance<Poduct>().Update(product);
+            }
+            else
+            {
+                product.CreatedDate = DateTime.Now;
+                _unitOfWork.GetRepositoryInstance<Poduct>().Add(product);
+            }
+
+            return RedirectToAction("Product");
+        }
+        #endregion
+
+
+    }
 }
