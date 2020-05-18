@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MOZGAMAR.VIewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,7 +11,8 @@ namespace MOZGAMAR.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            HomeIndexViewModel viewModel = new HomeIndexViewModel();
+            return View(viewModel.CreateModel());
         }
 
         public ActionResult About()

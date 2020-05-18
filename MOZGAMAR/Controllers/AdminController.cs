@@ -105,8 +105,20 @@ namespace MOZGAMAR.Controllers
             return View("UpdateProduct", product);
         }
         [HttpPost]
-        public ActionResult UpdateOrSaveProduct(Poduct product)
+        public ActionResult UpdateOrSaveProduct(Poduct product, HttpPostedFileBase fileBase)
         {
+
+            string pic = null;
+            if (fileBase != null)
+            {
+                pic = System.IO.Path.GetFileName(fileBase.FileName);
+                string paht = System.IO.Path.Combine(Server.MapPath("~/ProducIMG/"), pic);
+
+                fileBase.SaveAs(paht);
+            }
+
+
+            product.ProductImage = pic;
             if (product.PoductId > 0)
             {
                 product.ModifiedDate = DateTime.Now;
