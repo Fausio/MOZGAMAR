@@ -11,8 +11,7 @@ namespace MOZGAMAR.DAL
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class Poduct
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -23,15 +22,9 @@ namespace MOZGAMAR.DAL
     
         public int PoductId { get; set; }
         public string Name { get; set; }
-
-        [Display(Name = "Categoria")]
         public Nullable<int> CategoryId { get; set; }
         public Nullable<bool> IsActive { get; set; }
         public Nullable<bool> ISDelete { get; set; }
-
-       
-        [DataType(DataType.Date)]
-        [Display(Name = "Data da publicação")]
         public Nullable<System.DateTime> CreatedDate { get; set; }
         public Nullable<System.DateTime> ModifiedDate { get; set; }
         public string Description { get; set; }
@@ -39,6 +32,7 @@ namespace MOZGAMAR.DAL
         public Nullable<bool> IsFeatured { get; set; }
         public Nullable<decimal> Price { get; set; }
         public Nullable<int> Quantity { get; set; }
+        public Nullable<bool> IsNew { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Cart> Carts { get; set; }

@@ -1,4 +1,5 @@
-﻿@{
+﻿@model MOZGAMAR.VIewModel.HomeIndexViewModel
+@{
     ViewBag.Title = "Home Page";
 }
 
@@ -70,36 +71,43 @@
 </div>
 
 <div class="row product-container">
-    <div class="col-md-3  col-xs-3 col-sm-3" style="margin-bottom:8px">
-        <div class="thumbnail product-item" style="height:45%">
-            <img class="img-responsive" title=" clica para ver o produto"
-                 style="cursor:pointer;height:160px;width:100%"
-                 src="~/Images/gtx1080ti.jpg" />
+    @foreach (var item in Model.LiftOfproducts)
+    {
+        <div class="col-md-3  col-xs-3 col-sm-3" style="margin-bottom:8px">
+            <div class="thumbnail product-item" style="height:45%">
+                <img class="img-responsive" title=" clica para ver o produto"
+                     style="cursor:pointer;height:160px;width:100%"
+                     src="~/ProducIMG/@item.ProductImage" />
 
-            <div class="caption">
-                <h5>GTX 1080 - TI </h5>
-                <p>500.00 MT</p>
-                <p>Disponivel</p>
-                <div class="product-item-badge">usado</div>
+                <div class="caption">
+                    <h5>@item.Name</h5>
+                    <p>Preço: <b> @item.Price MT</b></p>
+                    @if (item.IsFeatured == true)
+                    {
+                       <b><p>Disponível</p></b> 
+                    }
+                    else
+                    {
+                        <p>Indisponível</p>
+                    }
+
+                <div class="product-item-badge">
+                     
+                    @if (item.IsNew == true)
+                    {
+                        <p>Novo</p>
+                    }
+                    else
+                    {
+                        <p>Usado</p>
+                    }
+
+                </div>
+                </div>
             </div>
         </div>
-    </div>
-</div>
-<div class="row product-container">
-    <div class="col-md-3  col-xs-3 col-sm-3" style="margin-bottom:8px">
-        <div class="thumbnail product-item" style="height:45%">
-            <img class="img-responsive" title=" clica para ver o produto"
-                 style="cursor:pointer;height:160px;width:100%"
-                 src="~/Images/gtx1080ti.jpg" />
+    }
 
-            <div class="caption">
-                <h5>GTX 1080 - TI </h5>
-                <p>500.00 MT</p>
-                <p>Disponivel</p>
-                <div class="product-item-badge">Novo</div>
-            </div>
-        </div>
-    </div>
 </div>
 
 <div class="row">
