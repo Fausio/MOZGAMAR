@@ -52,6 +52,12 @@
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -1597,10 +1603,14 @@
     <Content Include="AdminStyleView\vendor\jquery\jquery.min.js" />
     <Content Include="AdminStyleView\vendor\jquery\jquery.slim.js" />
     <Content Include="AdminStyleView\vendor\jquery\jquery.slim.min.js" />
+    <Content Include="bin\MOZGAMAR.dll" />
+    <Content Include="bin\MOZGAMAR.pdb" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\MyMainLayOut.css" />
+    <Content Include="Content\PagedList.css" />
     <Content Include="DAL\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Model1.Context.cs</LastGenOutput>
@@ -1628,6 +1638,20 @@
     <Content Include="Images\gtx1080ti.jpg" />
     <Content Include="Images\school_uniforms_snipers_anime_simple_background_Kozaki_Yusuke_original_characters_4139x2328.jpg" />
     <Content Include="Images\searchIcon.png" />
+    <Content Include="obj\Debug\MOZGAMAR.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\MOZGAMAR.dll" />
+    <Content Include="obj\Debug\MOZGAMAR.pdb" />
+    <Content Include="obj\Debug\TempPE\DAL.Model1.Context.cs.dll" />
+    <Content Include="obj\Debug\TempPE\DAL.Model1.cs.dll" />
+    <Content Include="obj\Debug\TempPE\DAL.Model1.Designer.cs.dll" />
+    <Content Include="ProducIMG\CYBERPUNK-2077-CAPA-PS4.jpg" />
+    <Content Include="ProducIMG\download.jpg" />
+    <Content Include="ProducIMG\gtx1080ti.jpg" />
+    <Content Include="ProducIMG\joy.jpg" />
+    <Content Include="ProducIMG\memoria.jpg" />
+    <Content Include="ProducIMG\Monitor Dell LED 20   E2016HV-425x340.jpg" />
+    <Content Include="ProducIMG\ps5.jpg" />
+    <Content Include="ProducIMG\xbox.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <EntityDeploy Include="DAL\Model1.edmx">
@@ -1704,6 +1728,14 @@
     <Content Include="AdminStyleView\vendor\fontawesome-free\webfonts\fa-solid-900.woff2" />
     <Content Include="AdminStyleView\vendor\jquery\jquery.min.map" />
     <Content Include="AdminStyleView\vendor\jquery\jquery.slim.min.map" />
+    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <Content Include="obj\Debug\edmxResourcesToEmbed\DAL\Model1.csdl" />
+    <Content Include="obj\Debug\edmxResourcesToEmbed\DAL\Model1.msl" />
+    <Content Include="obj\Debug\edmxResourcesToEmbed\DAL\Model1.ssdl" />
+    <Content Include="obj\Debug\MOZGAMAR.csproj.CopyComplete" />
+    <Content Include="obj\Debug\MOZGAMAR.csproj.CoreCompileInputs.cache" />
+    <Content Include="obj\Debug\MOZGAMAR.csprojAssemblyReference.cache" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -1738,7 +1770,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="ProducIMG\" />
+    <Folder Include="obj\Release\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -1755,6 +1787,9 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -1,4 +1,6 @@
 ﻿@model MOZGAMAR.VIewModel.HomeIndexViewModel
+@using PagedList;
+@using PagedList.Mvc;
 @{
     ViewBag.Title = "Home Page";
 }
@@ -18,7 +20,7 @@
             <div class="imgOverlay"></div>
             <img style="height:320px;width:100%" src="../Images/4_03_21_2017_08_23_17.jpg" alt="First slide">
             <div class="carousel-caption">
-                <h3>New</h3>
+                <h3> </h3>
 
             </div>
         </div>
@@ -26,7 +28,7 @@
             <div class="imgOverlay"></div>
             <img style="height:320px;width:100%" src="../Images/4_03_21_2017_08_23_17.jpg" alt="Second slide">
             <div class="carousel-caption">
-                <h3>My Phone</h3>
+                <h3> </h3>
 
             </div>
         </div>
@@ -34,7 +36,7 @@
             <div class="imgOverlay"></div>
             <img style="height:320px;width:100%" src="../Images/4_03_21_2017_08_23_17.jpg" alt="Third slide">
             <div class="carousel-caption">
-                <h3>Latest</h3>
+                <h3> </h3>
 
             </div>
         </div>
@@ -53,7 +55,7 @@
 <div class="olContent f1"><h2 style="color:black">Pesquisar Produto/Categoria</h2></div>
 <form method="post">
     <div class="olSearch fr">
-        <input type="text" name="search" placeholder="Enter Keyword" class="inputComn form-control" />
+        <input type="text" name="pesquisa" placeholder="Digite a palavra-chave" class="inputComn form-control" />
         <div class="searchIcon">
             <button type="submit" class="searchBtn">
                 <img src="~/Images/searchIcon.png" />
@@ -73,41 +75,46 @@
 <div class="row product-container">
     @foreach (var item in Model.LiftOfproducts)
     {
-        <div class="col-md-3  col-xs-3 col-sm-3" style="margin-bottom:8px">
-            <div class="thumbnail product-item" style="height:45%">
+        <div class="col-md-3  col-xs-5 col-sm-3" style="margin-bottom:8px">
+            <div class="thumbnail product-item" style="height:45%; width:110%">
                 <img class="img-responsive" title=" clica para ver o produto"
-                     style="cursor:pointer;height:160px;width:100%"
+                     style="cursor:pointer;height:160px;width:120%"
                      src="~/ProducIMG/@item.ProductImage" />
 
                 <div class="caption">
                     <h5>@item.Name</h5>
-                    <p>Preço: <b> @item.Price MT</b></p>
+                    <p> @item.Price MT</p>
                     @if (item.IsFeatured == true)
                     {
-                       <b><p>Disponível</p></b> 
+                        <b><p>Disponível</p></b>
                     }
                     else
                     {
                         <p>Indisponível</p>
                     }
 
-                <div class="product-item-badge">
-                     
-                    @if (item.IsNew == true)
-                    {
-                        <p>Novo</p>
-                    }
-                    else
-                    {
-                        <p>Usado</p>
-                    }
+                    <div class="product-item-badge">
 
-                </div>
+                        @if (item.IsNew == true)
+                        {
+                            <p>Novo</p>
+                        }
+                        else
+                        {
+                            <p>Usado</p>
+                        }
+
+                    </div>
                 </div>
             </div>
         </div>
     }
 
+
+</div>
+
+<div class="  product-container">
+    @Html.PagedListPager(Model.LiftOfproducts, page => Url.Action("Index", new { page, pesquisa = Request.QueryString["pesquisa"] }), new PagedListRenderOptions() { Display = PagedListDisplayMode.IfNeeded, DisplayItemSliceAndTotal = true })
 </div>
 
 <div class="row">
