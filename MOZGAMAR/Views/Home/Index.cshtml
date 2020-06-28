@@ -73,7 +73,7 @@
 </div>
 
 <div class="row product-container">
-    @foreach (var item in Model.LiftOfproducts)
+    @foreach (var item in Model.LiftOfProducts)
     {
         <div class="col-md-3  col-xs-5 col-sm-3" style="margin-bottom:8px">
             <div class="thumbnail product-item" style="height:45%; width:110%">
@@ -114,7 +114,7 @@
 </div>
 
 <div class="  product-container">
-    @Html.PagedListPager(Model.LiftOfproducts, page => Url.Action("Index", new { page, pesquisa = Request.QueryString["pesquisa"] }), new PagedListRenderOptions() { Display = PagedListDisplayMode.IfNeeded, DisplayItemSliceAndTotal = true })
+    @Html.PagedListPager(Model.LiftOfProducts, page => Url.Action("Index", new { page, pesquisa = Request.QueryString["pesquisa"] }), new PagedListRenderOptions() { Display = PagedListDisplayMode.IfNeeded, DisplayItemSliceAndTotal = true })
 </div>
 
 <div class="row">

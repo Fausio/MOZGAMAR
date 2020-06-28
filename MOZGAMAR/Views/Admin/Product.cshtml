@@ -1,4 +1,4 @@
-﻿@model List<MOZGAMAR.DAL.Poduct>
+﻿@model List<Domain.Product>
 
 @{
     ViewBag.Title = "Product";
@@ -50,7 +50,7 @@
                                 <td>@(Model.IndexOf (item)+1)</td>
                                 <td>@item.Name</td>
                                 <td>
-                                    @Html.ActionLink("Editar", "UpdateProduct", new { Id = item.PoductId }, htmlAttributes: new { @class = "btn btn-primary", @role = "button" })
+                                    @Html.ActionLink("Editar", "UpdateProduct", new { Id = item.ProductId }, htmlAttributes: new { @class = "btn btn-primary", @role = "button" })
                                 </td>
                             </tr>
 

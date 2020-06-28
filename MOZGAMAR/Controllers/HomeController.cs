@@ -9,12 +9,12 @@ namespace MOZGAMAR.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index( string pesquisa, int? page)
+        public ActionResult Index(string pesquisa, int? page)
         {
             HomeIndexViewModel viewModel = new HomeIndexViewModel();
-            return View(viewModel.CreateModel(pesquisa, 8 ,page));
+            return View(viewModel.CreateModel(pesquisa, 8, page));
         }
-   
+
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";

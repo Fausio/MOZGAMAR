@@ -1,13 +1,12 @@
-﻿using Microsoft.Ajax.Utilities;
-using MOZGAMAR.DAL;
+﻿using Domain;
 using MOZGAMAR.Models;
-using MOZGAMAR.Repository;
+using EFDBAcess.Repository;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System.Web.Mvc;
+using System.Web.Mvc; 
 
 namespace MOZGAMAR.Controllers
 {
@@ -82,7 +81,7 @@ namespace MOZGAMAR.Controllers
         #region Product
         public ActionResult Product()
         {
-            return View(_unitOfWork.GetRepositoryInstance<Poduct>().GetProduct());
+            return View(_unitOfWork.GetRepositoryInstance<Product>().GetProduct());
         }
         public ActionResult CreateProduct()
         {
@@ -92,20 +91,20 @@ namespace MOZGAMAR.Controllers
         {
             ViewBag.GetCategoty = GetCategoty();
 
-            Poduct product;
+            Product product;
             if (id == 0)
             {
-                product = new Poduct();
+                product = new Product();
             }
             else
             {
-                product = _unitOfWork.GetRepositoryInstance<Poduct>().GetFirstOrDefault(id);
+                product = _unitOfWork.GetRepositoryInstance<Product>().GetFirstOrDefault(id);
             }
 
             return View("UpdateProduct", product);
         }
         [HttpPost]
-        public ActionResult UpdateOrSaveProduct(Poduct product, HttpPostedFileBase fileBase)
+        public ActionResult UpdateOrSaveProduct(Product product, HttpPostedFileBase fileBase)
         {
 
             string pic = null;
@@ -119,15 +118,15 @@ namespace MOZGAMAR.Controllers
 
 
             product.ProductImage = pic;
-            if (product.PoductId > 0)
+            if (product.ProductId > 0)
             {
                 product.ModifiedDate = DateTime.Now;
-                _unitOfWork.GetRepositoryInstance<Poduct>().Update(product);
+                _unitOfWork.GetRepositoryInstance<Product>().Update(product);
             }
             else
             {
                 product.CreatedDate = DateTime.Now;
-                _unitOfWork.GetRepositoryInstance<Poduct>().Add(product);
+                _unitOfWork.GetRepositoryInstance<Product>().Add(product);
             }
 
             return RedirectToAction("Product");

@@ -1,4 +1,4 @@
-﻿@model MOZGAMAR.DAL.Poduct
+﻿@model Domain.Product
 
 @{
     ViewBag.Title = "UpdateProduct";
@@ -40,7 +40,7 @@
     <div class="form-horizontal">
 
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        @Html.HiddenFor(model => model.PoductId)
+        @Html.HiddenFor(model => model.ProductId)
 
         <div class="col-md-7">
             <div class="form-group">
@@ -70,7 +70,7 @@
                 </div>
             </div>
         </div>
-        @if (Model.PoductId != 0)
+        @if (Model.ProductId != 0)
         {
             <div class="col-md-7">
                 <div class="form-group">
