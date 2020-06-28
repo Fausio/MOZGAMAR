@@ -61,6 +61,14 @@
     <Compile Include="Migrations\202006281511535_add_Brand_tp_product.Designer.cs">
       <DependentUpon>202006281511535_add_Brand_tp_product.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202006281518559_validateProductPostData.cs" />
+    <Compile Include="Migrations\202006281518559_validateProductPostData.Designer.cs">
+      <DependentUpon>202006281518559_validateProductPostData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006281521285_Nullable_updateDate_of_product.cs" />
+    <Compile Include="Migrations\202006281521285_Nullable_updateDate_of_product.Designer.cs">
+      <DependentUpon>202006281521285_Nullable_updateDate_of_product.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\GenericRepository.cs" />
@@ -87,6 +95,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202006281511535_add_Brand_tp_product.resx">
       <DependentUpon>202006281511535_add_Brand_tp_product.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006281518559_validateProductPostData.resx">
+      <DependentUpon>202006281518559_validateProductPostData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006281521285_Nullable_updateDate_of_product.resx">
+      <DependentUpon>202006281521285_Nullable_updateDate_of_product.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

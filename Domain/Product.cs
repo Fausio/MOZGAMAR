@@ -8,29 +8,36 @@ namespace Domain
     {
         public int ProductId { get; set; }
 
+        [Required]
         [StringLength(30)]
         [Display(Name ="Nome" )]
         public string Name { get; set; }
 
+        [Required]
         [StringLength(30)]
         [Display(Name = "Marca")]
         public string Brand { get; set; }
-        public Nullable<int> CategoryId { get; set; }
+
+        [Required]
+        public int CategoryId { get; set; }
 
         public Nullable<bool> IsActive { get; set; }
         public Nullable<bool> ISDelete { get; set; }
-        public Nullable<System.DateTime> CreatedDate { get; set; }
-        public Nullable<System.DateTime> ModifiedDate { get; set; }
-        [Display(Name = "Descrição")]
+        public DateTime CreatedDate { get; set; }
+        public Nullable<DateTime> ModifiedDate { get; set; }
 
+        [Display(Name = "Descrição")]
         [StringLength(150)]
         public string Description { get; set; }
+
+        [Required]
         [Display(Name = "Imagem")]
         public string ProductImage { get; set; }
 
         [Display(Name = "Esta disponivel ?")]
         public bool IsAvailable { get; set; }
 
+        [Required]
         [Display(Name = "Preço")]
         public decimal Price { get; set; }
         public Nullable<int> Quantity { get; set; }
