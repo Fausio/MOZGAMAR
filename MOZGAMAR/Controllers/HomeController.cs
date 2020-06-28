@@ -1,4 +1,7 @@
-﻿using MOZGAMAR.VIewModel;
+﻿using Domain;
+using EFDBAcess;
+using EFDBAcess.Repository;
+using MOZGAMAR.VIewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,24 +12,47 @@ namespace MOZGAMAR.Controllers
 {
     public class HomeController : Controller
     {
+        ApplicationDbContext dbcontext = new ApplicationDbContext();
         public ActionResult Index(string pesquisa, int? page)
         {
             HomeIndexViewModel viewModel = new HomeIndexViewModel();
             return View(viewModel.CreateModel(pesquisa, 8, page));
         }
 
-        public ActionResult About()
+        public ActionResult AddProductToMyCart(int id)
         {
-            ViewBag.Message = "Your application description page.";
+            List<ProductItem> Mycart;  
+            if (Session["Mycart"] == null)
+            {
+               Mycart = new List<ProductItem>();
+            }
+            else
+            {
+               Mycart = (List<ProductItem>)Session["Mycart"];
+            }
+            var product = dbcontext.Product.Find(id);
 
-            return View();
+            Mycart.Add(new ProductItem() { Product = product, QuantityOfProductItem = 1 });
+
+            Session["Mycart"] = Mycart;
+            return RedirectToAction("Index");
         }
 
-        public ActionResult Contact()
+        public ActionResult RemoveFromMyCart(int id)
         {
-            ViewBag.Message = "Your contact page.";
+            var Mycart = (List<ProductItem>)Session["Mycart"];
+          
+            foreach (var item in Mycart)
+            {
+                if (item.Product.ProductId == id)
+                {
+                    Mycart.Remove(item);
+                    break;
+                }
+            }
 
-            return View();
+            Session["Mycart"] = Mycart;
+            return RedirectToAction("Index");
         }
     }
 }

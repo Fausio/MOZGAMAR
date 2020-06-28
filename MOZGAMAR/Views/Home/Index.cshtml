@@ -5,6 +5,7 @@
     ViewBag.Title = "Home Page";
 }
 
+<link href="~/AdminStyleView/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
 
 
 
@@ -84,24 +85,30 @@
                 <div class="caption">
                     <h5>@item.Name</h5>
                     <p> @item.Price MT</p>
-                    @if (item.IsFeatured == true)
+                    @if (item.IsAvailable)
                     {
-                        <b><p>Disponível</p></b>
+                        using (Html.BeginForm("AddProductToMyCart", "Home", new { @id=item.ProductId }, FormMethod.Post))
+                        {
+                            //Devo color simbulo para console, pc e outros
+                            <button type="submit" class=" pull-right"><i class="fa fa-shopping-cart"></i></button>
+                            <b>Disponível</b>
+                        }
+
                     }
                     else
                     {
-                        <p>Indisponível</p>
+                        <p> Indisponível </p>
                     }
 
                     <div class="product-item-badge">
 
-                        @if (item.IsNew == true)
+                        @if (item.IsNew)
                         {
-                            <p>Novo</p>
+                            <p><label style="color:lime">Novo</label></p>
                         }
                         else
                         {
-                            <p>Usado</p>
+                            <p> Usado </p>
                         }
 
                     </div>
