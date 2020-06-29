@@ -6,7 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System.Web.Mvc; 
+using System.Web.Mvc;
 
 namespace MOZGAMAR.Controllers
 {
@@ -106,30 +106,43 @@ namespace MOZGAMAR.Controllers
         [HttpPost]
         public ActionResult UpdateOrSaveProduct(Product product, HttpPostedFileBase fileBase)
         {
-
-            string pic = null;
-            if (fileBase != null)
+            if (ModelState.IsValid)
             {
-                pic = System.IO.Path.GetFileName(fileBase.FileName);
-                string paht = System.IO.Path.Combine(Server.MapPath("~/ProducIMG/"), pic);
+                if (product.ProductImage == null)
+                {
+                    string pic = null;
+                    if (fileBase != null)
+                    {
+                        pic = System.IO.Path.GetFileName(fileBase.FileName);
+                        string paht = System.IO.Path.Combine(Server.MapPath("~/ProducIMG/"), pic);
 
-                fileBase.SaveAs(paht);
-            }
+                        fileBase.SaveAs(paht);
+                    }
+                    product.ProductImage = pic;
+                }
 
 
-            product.ProductImage = pic;
-            if (product.ProductId > 0)
-            {
-                product.ModifiedDate = DateTime.Now;
-                _unitOfWork.GetRepositoryInstance<Product>().Update(product);
+
+              
+                if (product.ProductId > 0)
+                {
+                    product.ModifiedDate = DateTime.Now;
+                    _unitOfWork.GetRepositoryInstance<Product>().Update(product);
+                }
+                else
+                {
+                    product.CreatedDate = DateTime.Now;
+                    _unitOfWork.GetRepositoryInstance<Product>().Add(product);
+                }
+
+                return RedirectToAction("Product");
             }
             else
             {
-                product.CreatedDate = DateTime.Now;
-                _unitOfWork.GetRepositoryInstance<Product>().Add(product);
+                return RedirectToAction("CreateProduct", product);
             }
 
-            return RedirectToAction("Product");
+
         }
         #endregion
 

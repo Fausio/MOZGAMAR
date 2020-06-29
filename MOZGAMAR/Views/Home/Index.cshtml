@@ -7,14 +7,12 @@
 
 <link href="~/AdminStyleView/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
 
-
-
-
 <div id="themeSlider" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
         <li data-target="#themeSlider" data-slide-to="0" class="active"></li>
         <li data-target="#themeSlider" data-slide-to="1"></li>
         <li data-target="#themeSlider" data-slide-to="2"></li>
+        <li data-target="#themeSlider" data-slide-to="3"></li>
     </ol>
     <div class="carousel-inner">
         <div class="item active">
@@ -27,7 +25,7 @@
         </div>
         <div class="item">
             <div class="imgOverlay"></div>
-            <img style="height:320px;width:100%" src="../Images/4_03_21_2017_08_23_17.jpg" alt="Second slide">
+            <img style="height:320px;width:100%" src="../Images/2banner.jpg" alt="Second slide">
             <div class="carousel-caption">
                 <h3> </h3>
 
@@ -35,7 +33,15 @@
         </div>
         <div class="item">
             <div class="imgOverlay"></div>
-            <img style="height:320px;width:100%" src="../Images/4_03_21_2017_08_23_17.jpg" alt="Third slide">
+            <img style="height:320px;width:100%" src="../Images/animebanner.jpg" alt="Third slide">
+            <div class="carousel-caption">
+                <h3> </h3>
+
+            </div>
+        </div>
+        <div class="item">
+            <div class="imgOverlay"></div>
+            <img style="height:320px;width:100%" src="../Images/pikabanner.jpg" alt="Third slide">
             <div class="carousel-caption">
                 <h3> </h3>
 
@@ -68,7 +74,7 @@
 <div class="row">
     <div class="col-md-12">
         <div class="page-header">
-            <h2>Produtos<small> disponivel</small></h2>
+            <h2>Produtos<small> disponível</small></h2>
         </div>
     </div>
 </div>
@@ -78,16 +84,19 @@
     {
         <div class="col-md-3  col-xs-5 col-sm-3" style="margin-bottom:8px">
             <div class="thumbnail product-item" style="height:45%; width:110%">
-                <img class="img-responsive" title=" clica para ver o produto"
-                     style="cursor:pointer;height:160px;width:120%"
-                     src="~/ProducIMG/@item.ProductImage" />
+                <a href="~/Product/Product/@item.ProductId">
+                    <img class="thumb-image" title="@item.Name"
+                         style="cursor:pointer;height:160px;width:120%"
+                         src="~/ProducIMG/@item.ProductImage" />
+                </a>
 
                 <div class="caption">
                     <h5>@item.Name</h5>
-                    <p> @item.Price MT</p>
+                    <p><b> Marca:</b> @item.Brand</p>
+                    <p><b> Preço:</b> @item.Price MT</p>
                     @if (item.IsAvailable)
                     {
-                        using (Html.BeginForm("AddProductToMyCart", "Home", new { @id=item.ProductId }, FormMethod.Post))
+                        using (Html.BeginForm("AddProductToMyCart", "Home", new { @id = item.ProductId }, FormMethod.Post))
                         {
                             //Devo color simbulo para console, pc e outros
                             <button type="submit" class=" pull-right"><i class="fa fa-shopping-cart"></i></button>

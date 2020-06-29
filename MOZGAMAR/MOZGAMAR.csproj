@@ -136,6 +136,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -1598,6 +1599,16 @@
     <Content Include="ProducIMG\Monitor Dell LED 20   E2016HV-425x340.jpg" />
     <Content Include="ProducIMG\ps5.jpg" />
     <Content Include="ProducIMG\xbox.png" />
+    <Content Include="quickbeam\.gitignore" />
+    <Content Include="quickbeam\demo\css\demo.css" />
+    <Content Include="quickbeam\demo\index.html" />
+    <Content Include="quickbeam\demo\quickbeam.css" />
+    <Content Include="quickbeam\demo\quickbeam.js" />
+    <Content Include="quickbeam\dist\quickbeam.min.js" />
+    <Content Include="quickbeam\gulpfile.js" />
+    <Content Include="quickbeam\images\animation.gif" />
+    <Content Include="quickbeam\images\logo.png" />
+    <Content Include="quickbeam\src\script.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="AdminStyleView\scss\sb-admin.scss" />
@@ -1675,6 +1686,13 @@
     <Content Include="obj\Debug\MOZGAMAR.csproj.CoreCompileInputs.cache" />
     <Content Include="obj\Debug\MOZGAMAR.csprojAssemblyReference.cache" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <Content Include="quickbeam\dist\quickbeam.liquid" />
+    <Content Include="quickbeam\dist\quickbeam.scss" />
+    <Content Include="quickbeam\LICENSE.md" />
+    <Content Include="quickbeam\package.json" />
+    <Content Include="quickbeam\README.md" />
+    <Content Include="quickbeam\src\style.scss" />
+    <Content Include="quickbeam\src\template.liquid" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -1706,6 +1724,8 @@
     <Content Include="Views\Admin\UpdateCategory.cshtml" />
     <Content Include="Views\Admin\Product.cshtml" />
     <Content Include="Views\Admin\UpdateProduct.cshtml" />
+    <Content Include="Views\Product\ProductDetails.cshtml" />
+    <Content Include="Views\Product\Product.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

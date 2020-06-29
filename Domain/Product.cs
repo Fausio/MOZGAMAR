@@ -30,7 +30,7 @@ namespace Domain
         [StringLength(150)]
         public string Description { get; set; }
 
-        [Required]
+      
         [Display(Name = "Imagem")]
         public string ProductImage { get; set; }
 
@@ -42,7 +42,7 @@ namespace Domain
         public decimal Price { get; set; }
         public Nullable<int> Quantity { get; set; }
 
-        [Display(Name = "É  novo ?")]
+        [Display(Name = "É novo ?")]
         public bool IsNew { get; set; }
 
         public virtual ICollection<Cart> Carts { get; set; }

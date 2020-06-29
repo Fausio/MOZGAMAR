@@ -15,7 +15,7 @@
         <div class="row">
             <div class="col-md-6 col-sm-6 col-xs-6">
                 <div class="logo">
-                    <h1><a href="#">MꙨZ G<a style="color:firebrick">A</a>MER </a> </h1>
+                    <h1>MꙨZ G<label style="color:firebrick">A</label>MER</h1>
                     <p>loja online: versão 2.0</p>
                 </div>
             </div>
@@ -24,21 +24,21 @@
 
 
                 @*<li>
-                        <div class="hidden-xs">
-                            <h4>Ligue:</h4>
-                            <p>+258 84 822 0 187</p>
-                        </div>
+                <div class="hidden-xs">
+                    <h4>Ligue:</h4>
+                    <p>+258 84 822 0 187</p>
+                </div>
 
-                        <div class="visible-xs">
+                <div class="visible-xs">
 
-                            <p>848220187</p>
-                        </div>
-                    </li>*@
+                    <p>848220187</p>
+                </div>
+            </li>*@
                 <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown">
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">Cadastrar<b class="caret"></b></a>
                         <ul class="dropdown-menu ">
-                            <li><a href="@Url.Action("Product","Admin")">Venda<i class="pull-right fa fa-adversal"></i>  </a></li>
+                            <li><a href="@Url.Action("Product","Admin")">Venda<i class="pull-right fas fa-user-circle fa-fw"></i>  </a></li>
                             <li><a href="#">Pedido<i class="pull-right fa fa-times"></i>  </a></li>
                         </ul>
                     </li>
@@ -83,26 +83,65 @@
 
             @RenderBody()
             <hr />
-            <footer>
-                <div class="row">
-                    <div class="col-md-12 copyright">
+            @*<footer>
+            <div class="row">
+                <div class="col-md-12 copyright">
 
-                        <div class="col-md-6 col-sm-6 copyright-left">
-                            <p>&copy; @DateTime.Now.Year - MꙨZ GAMER  | All right reserved.</p>
+                    <div class="col-md-6 col-sm-6 copyright-left">
+                        <p>&copy; @DateTime.Now.Year - MꙨZ GAMER  | All right reserved.</p>
+                    </div>
+
+                    <div class="col-md-6 col-sm-6 copyright-right">
+
+                        <ul class="list-unstyled list-social">
+                            <li><a href="#" target="_blank"><i class="fa fa-facebook-square"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </footer>*@
+            <footer role="contentinfo" aria-label="Footer">
+                <div class="_cont">
+                    <div class="socials">
+                        <strong>follow us:</strong>
+                        <ul>
+                            <li><a title="html-koder / test on Twitter" class="tw" target="_blank">Twitter</a></li>
+                            <li><a title="html-koder / test on Facebook" class="fb" target="_blank">Facebook</a></li>
+                            <li><a title="html-koder / test on Instagram" class="in" target="_blank">Instagram</a></li>
+                            <li><a title="html-koder / test on Pinterest" class="pi" target="_blank">Pinterest</a></li>
+                        </ul>
+                    </div>
+                    <div class="top">
+                        <div class="right">
+                            <form method="post" action="/contact" class="contact-form" accept-charset="UTF-8">
+                                <input type="hidden" value="customer" name="form_type" /><input type="hidden" name="utf8" value="✓" />
+                                <div>
+                                    <input type="hidden" id="contact_tags" name="contact[tags]" value="newsletter" />
+                                    <input type="text" id="contact_email" name="contact[email]" placeholder="Submit e-mail for special offers...">
+                                    <button type="submit" title="Newsletter Signup">OK</button>
+                                </div>
+                            </form>
                         </div>
-
-                        <div class="col-md-6 col-sm-6 copyright-right">
-
-                            <ul class="list-unstyled list-social">
-                                <li><a href="#" target="_blank"><i class="fa fa-facebook-square"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-
-                            </ul>
+                        <div class="left">
+                            <span class="phone">+420 123 456 789</span>
+                            <a class="mail" href="mailto:email.from@settings.com">email.from@settings.com</a>
+                        </div>
+                    </div>
+                    <div class="bottom">
+                        <div class="left">
+                            <nav role="navigation" aria-label="Service menu">
+                                <ul>
+                                    <li><a>  <p>&copy; @DateTime.Now.Year - MꙨZ GAMER  | All right reserved.</p></a></li>
+                                    <li><a>About Us</a></li>
+                                </ul>
+                            </nav>
                         </div>
                     </div>
                 </div>
-
             </footer>
         </div>
     </div>

@@ -15,7 +15,7 @@
         <li class="breadcrumb-item">
             <a href="~/Admin/Product">Produto</a>
         </li>
-        @if (Model.CategoryId == null)
+        @if (Model.CategoryId == 0)
         {
             <li class="breadcrumb-item active">Adicionar  Produto</li>
         }
@@ -41,109 +41,96 @@
 
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.ProductId)
+        @if (Model.ProductId != 0)
+        {
+            @Html.HiddenFor(model => model.ProductImage)
+            @Html.HiddenFor(model => model.CreatedDate)
 
-        <div class="col-md-10">
-            <div class="form-group">
-                @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
+            @*@Html.HiddenFor(model => model.IsNew)
+            @Html.HiddenFor(model => model.IsAvailable)*@
+        }
+
+        <div class="row col-md-12">
+            <div class="col-md-3">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Name)
+
                     @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
                     @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+
                 </div>
             </div>
-        </div>
-        <div class="col-md-10">
-            <div class="form-group">
-                @Html.LabelFor(model => model.Brand, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+            <div class="col-md-3">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Brand)
+
+                    @Html.EditorFor(model => model.Brand, new { htmlAttributes = new { @class = "form-control" } })
                     @Html.ValidationMessageFor(model => model.Brand, "", new { @class = "text-danger" })
+
                 </div>
             </div>
         </div>
-        <div class="col-md-10">
-            <div class="form-group">
-                @Html.LabelFor(model => model.Category.CategoryId, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
+        <div class="row col-md-12">
+            <div class="col-md-3">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Category.CategoryId)
+
                     @{ List<SelectListItem> data = ViewBag.GetCategoty; }
-                    @Html.DropDownListFor(model => model.CategoryId, data, "--- Selecione um categoria ---", new { @class = "form-control" })
+                    @Html.DropDownListFor(model => model.CategoryId, data, "-- Categoria --", new { @class = "form-control" })
                     @Html.ValidationMessageFor(model => model.CategoryId, "", new { @class = "text-danger" })
                 </div>
             </div>
-        </div>
-
-        <div class="col-md-10">
-            <div class="form-group">
-                @Html.LabelFor(model => model.ProductImage, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-
-                    <input type="file" id="fileBase" name="fileBase" style="width:100%" />
-                    @Html.ValidationMessageFor(model => model.ProductImage, "", new { @class = "text-danger" })
+            @if (Model.ProductId == 0)
+            {
+                <div class="col-md-3">
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.ProductImage)
+                        <input type="file" id="fileBase" name="fileBase" style="width:100%" />
+                        @Html.ValidationMessageFor(model => model.ProductImage, "", new { @class = "text-danger" })
+                    </div>
                 </div>
-            </div>
+            }
+
         </div>
 
-        <div class="col-md-10">
-            <div class="form-group">
-                @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
+        <div class="row col-md-12">
+            <div class="col-md-3">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Description)
                     @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
                     @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
                 </div>
             </div>
-        </div>
 
-        <div class="col-md-10">
-            <div class="form-group">
-                @Html.LabelFor(model => model.Price, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
+            <div class="col-md-3">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Price)
                     @Html.EditorFor(model => model.Price, new { htmlAttributes = new { @class = "form-control" } })
                     @Html.ValidationMessageFor(model => model.Price, "", new { @class = "text-danger" })
                 </div>
             </div>
         </div>
 
-        <div class="col-md-10">
-            <div class="form-group">
-                @Html.LabelFor(model => model.IsNew, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.CheckBox("IsActive")
-                    @Html.ValidationMessageFor(model => model.IsNew, "", new { @class = "text-danger" })
-                </div>
-            </div>
-        </div>
-        <div class="col-md-10">
-            <div class="form-group">
-                @Html.LabelFor(model => model.IsAvailable, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.CheckBox("IsActive")
-                    @Html.ValidationMessageFor(model => model.IsAvailable, "", new { @class = "text-danger" })
-                </div>
-            </div>
-        </div>
-        @if (Model.ProductId != 0)
-        {
-            <div class="col-md-7">
+        <div class="row col-md-12">
+            <div class="col-md-3">
                 <div class="form-group">
-                    @Html.LabelFor(model => model.ISDelete, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.LabelFor(model => model.IsNew)
                     <div class="col-md-10">
-                        @Html.CheckBox("ISDelete")
-                        @Html.ValidationMessageFor(model => model.ISDelete, "", new { @class = "text-danger" })
+                        @Html.CheckBox("IsNew")
+                        @Html.ValidationMessageFor(model => model.IsNew, "", new { @class = "text-danger" })
                     </div>
                 </div>
             </div>
-        }
-
-
-
-        @*<div class="col-md-7">
-            <div class="form-group">
-                @Html.LabelFor(model => model.Quantity, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.Quantity, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Quantity, "", new { @class = "text-danger" })
+            <div class="col-md-3">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.IsAvailable)
+                    <div class="col-md-10">
+                        @Html.CheckBox("IsAvailable")
+                        @Html.ValidationMessageFor(model => model.IsAvailable, "", new { @class = "text-danger" })
+                    </div>
                 </div>
             </div>
-        </div>*@
+        </div>
 
 
 
@@ -151,9 +138,11 @@
             <div class="col-md-10">
                 @Html.ActionLink("Cancelar", "Product", routeValues: null, htmlAttributes: new { @class = "btn btn-danger", @role = "button" })
                 <input type="submit" value="Gravar" class="btn btn-success" />
-
             </div>
         </div>
+
+
+
     </div>
         }
 

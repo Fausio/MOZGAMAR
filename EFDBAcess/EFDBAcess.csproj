@@ -69,6 +69,10 @@
     <Compile Include="Migrations\202006281521285_Nullable_updateDate_of_product.Designer.cs">
       <DependentUpon>202006281521285_Nullable_updateDate_of_product.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202006281805484_removeRequiredPic.cs" />
+    <Compile Include="Migrations\202006281805484_removeRequiredPic.Designer.cs">
+      <DependentUpon>202006281805484_removeRequiredPic.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\GenericRepository.cs" />
@@ -101,6 +105,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202006281521285_Nullable_updateDate_of_product.resx">
       <DependentUpon>202006281521285_Nullable_updateDate_of_product.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006281805484_removeRequiredPic.resx">
+      <DependentUpon>202006281805484_removeRequiredPic.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
