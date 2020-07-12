@@ -1,0 +1,21 @@
+﻿@model Domain.Product
+
+@{
+    Layout = null;
+}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="~/zoomproduct/dist/style.css">
+
+<div class="wrapper">
+    <div class="left">
+        <img src="~/ProducIMG/@Model.ProductImage" />
+    </div>
+    <div class="right">
+        <div class="inner">
+            <img src="~/ProducIMG/@Model.ProductImage" />
+        </div>
+    </div>
+</div>
+
+<!-- partial -->
+<script src="~/zoomproduct/dist/script.js"></script>
