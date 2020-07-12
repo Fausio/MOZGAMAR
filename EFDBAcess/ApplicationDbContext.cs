@@ -25,5 +25,8 @@ namespace EFDBAcess
         public virtual DbSet<Role> Role { get; set; }
         public virtual DbSet<ShippingDetails> ShippingDetails { get; set; }
         public virtual DbSet<SlideImage> SlideImage { get; set; }
+
+        public virtual DbSet<Request> Requests { get; set; }
+        
     }
 }
