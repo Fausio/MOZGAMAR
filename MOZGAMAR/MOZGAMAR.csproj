@@ -1569,6 +1569,10 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\MyMainLayOut.css" />
     <Content Include="Content\PagedList.css" />
+    <Content Include="Content\request-set\dist\index.html" />
+    <Content Include="Content\request-set\dist\style.css" />
+    <Content Include="Content\request-set\license.txt" />
+    <Content Include="Content\request-set\src\index.html" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -1714,6 +1718,8 @@
     <Content Include="zoomproduct\src\index.html" />
     <Content Include="zoomproduct\src\script.js" />
     <Content Include="zoomproduct\src\style.css" />
+    <Content Include="Content\request-set\README.markdown" />
+    <Content Include="Content\request-set\src\style.scss" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <Content Include="quickbeam\dist\quickbeam.liquid" />
     <Content Include="quickbeam\dist\quickbeam.scss" />
@@ -1765,6 +1771,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Images\Requests\" />
     <Folder Include="obj\Release\" />
   </ItemGroup>
   <ItemGroup>

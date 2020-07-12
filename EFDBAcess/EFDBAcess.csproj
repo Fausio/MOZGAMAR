@@ -77,6 +77,10 @@
     <Compile Include="Migrations\202007121215054_requestModels.Designer.cs">
       <DependentUpon>202007121215054_requestModels.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202007121351192_RequestImage.cs" />
+    <Compile Include="Migrations\202007121351192_RequestImage.Designer.cs">
+      <DependentUpon>202007121351192_RequestImage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\GenericRepository.cs" />
@@ -115,6 +119,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202007121215054_requestModels.resx">
       <DependentUpon>202007121215054_requestModels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007121351192_RequestImage.resx">
+      <DependentUpon>202007121351192_RequestImage.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

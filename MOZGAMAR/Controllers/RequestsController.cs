@@ -49,10 +49,13 @@ namespace MOZGAMAR.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "requestId,Name,Brand,InitialPrice,FinalPrice,Description,CategoryId")] Request request)
+        public ActionResult Create([Bind(Include = "requestId,Name,Brand,InitialPrice,FinalPrice,Description,CategoryId")] Request request, HttpPostedFileBase fileBase)
         {
             if (ModelState.IsValid)
             {
+                string  pic = System.IO.Path.GetFileName(fileBase.FileName);
+                string  paht = System.IO.Path.Combine(Server.MapPath("~/Images/Requests/"), pic);
+
                 db.Requests.Add(request);
                 db.SaveChanges();
                 return RedirectToAction("Index");

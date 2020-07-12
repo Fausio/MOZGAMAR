@@ -1,71 +1,389 @@
-﻿@model IEnumerable<Domain.Request>
+﻿@model List<Domain.Request>
 
 @{
-    Layout = null;
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
+ 
+    <meta charset="UTF-8">
+    <title>CodePen - Product Set</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Josefin+Sans:300,300i,400,600,700|Open+Sans:300,300i,400,600,700'>
+    <link rel="stylesheet" href="~/Content/request-set/dist/style.css">
+      
 
-<!DOCTYPE html>
+    <!-- partial:index.partial.html -->
+    <!-- Product Set -->
+    <div class="ProductSet ProductSet--grid">
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
-</head>
-<body>
-    <p>
-        @Html.ActionLink("Create New", "Create")
-    </p>
-    <table class="table">
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Category.Name)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Name)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Brand)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.InitialPrice)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FinalPrice)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Description)
-            </th>
-            <th></th>
-        </tr>
-    
-    @foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Category.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Brand)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.InitialPrice)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FinalPrice)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.requestId }) |
-                @Html.ActionLink("Details", "Details", new { id=item.requestId }) |
-                @Html.ActionLink("Delete", "Delete", new { id=item.requestId })
-            </td>
-        </tr>
-    }
-    
-    </table>
-</body>
-</html>
+        <!-- Product Card: vertical -->
+        <a href="#" class="ProductCard ProductCard--grid">
+            <div class="ProductCard__img-wrapper">
+                <img src="https://www.etq-amsterdam.com/wp-content/uploads/2018/02/ETQ-Amsterdam-Low-2-Alloy-Ribbed-1-Side-1-2000x2000-c-bottom.jpg" alt="Shoe" class="ProductCard__img">
+            </div>
+
+            <div class="ProductCard__details">
+
+                <div class="ProductCard__details__header">
+                    <div class="ProductCard__titles">
+                        <h4 class="ProductCard__title">Chealsea Boot</h4>
+                        <h5 class="ProductCard__price">$72.99</h5>
+                    </div>
+
+                    <button class="IconBtn">
+                        <svg class="Icon Icon--medium Icon--colored">
+                            <use xlink:href="./src/img/icons/svg-sprite.svg#heart"></use>
+                        </svg>
+                    </button>
+                </div>
+
+                <p class="ProductCard__description">
+                    The Low 2 in Alloy grey is constructed with a premium nubuck leather upper and a leather coated Sanipur insole.
+                </p>
+            </div>
+        </a>
+        <!-- Product Card: vertical -->
+        <a href="#" class="ProductCard ProductCard--grid">
+            <div class="ProductCard__img-wrapper">
+                <img src="https://www.etq-amsterdam.com/wp-content/uploads/2018/02/ETQ-Amsterdam-Low-2-Alloy-Ribbed-1-Side-1-2000x2000-c-bottom.jpg" alt="Shoe" class="ProductCard__img">
+            </div>
+
+            <div class="ProductCard__details">
+
+                <div class="ProductCard__details__header">
+                    <div class="ProductCard__titles">
+                        <h4 class="ProductCard__title">Chealsea Boot</h4>
+                        <h5 class="ProductCard__price">$72.99</h5>
+                    </div>
+
+                    <button class="IconBtn">
+                        <svg class="Icon Icon--medium Icon--colored">
+                            <use xlink:href="./src/img/icons/svg-sprite.svg#heart"></use>
+                        </svg>
+                    </button>
+                </div>
+
+                <p class="ProductCard__description">
+                    The Low 2 in Alloy grey is constructed with a premium nubuck leather upper and a leather coated Sanipur insole.
+                </p>
+            </div>
+        </a>
+        <!-- Product Card: vertical -->
+        <a href="#" class="ProductCard ProductCard--grid">
+            <div class="ProductCard__img-wrapper">
+                <img src="https://www.etq-amsterdam.com/wp-content/uploads/2018/02/ETQ-Amsterdam-Low-2-Alloy-Ribbed-1-Side-1-2000x2000-c-bottom.jpg" alt="Shoe" class="ProductCard__img">
+            </div>
+
+            <div class="ProductCard__details">
+
+                <div class="ProductCard__details__header">
+                    <div class="ProductCard__titles">
+                        <h4 class="ProductCard__title">Chealsea Boot</h4>
+                        <h5 class="ProductCard__price">$72.99</h5>
+                    </div>
+
+                    <button class="IconBtn">
+                        <svg class="Icon Icon--medium Icon--colored">
+                            <use xlink:href="./src/img/icons/svg-sprite.svg#heart"></use>
+                        </svg>
+                    </button>
+                </div>
+
+                <p class="ProductCard__description">
+                    The Low 2 in Alloy grey is constructed with a premium nubuck leather upper and a leather coated Sanipur insole.
+                </p>
+            </div>
+        </a>
+        <!-- Product Card: vertical -->
+        <a href="#" class="ProductCard ProductCard--grid">
+            <div class="ProductCard__img-wrapper">
+                <img src="https://www.etq-amsterdam.com/wp-content/uploads/2018/02/ETQ-Amsterdam-Low-2-Alloy-Ribbed-1-Side-1-2000x2000-c-bottom.jpg" alt="Shoe" class="ProductCard__img">
+            </div>
+
+            <div class="ProductCard__details">
+
+                <div class="ProductCard__details__header">
+                    <div class="ProductCard__titles">
+                        <h4 class="ProductCard__title">Chealsea Boot</h4>
+                        <h5 class="ProductCard__price">$72.99</h5>
+                    </div>
+
+                    <button class="IconBtn">
+                        <svg class="Icon Icon--medium Icon--colored">
+                            <use xlink:href="./src/img/icons/svg-sprite.svg#heart"></use>
+                        </svg>
+                    </button>
+                </div>
+
+                <p class="ProductCard__description">
+                    The Low 2 in Alloy grey is constructed with a premium nubuck leather upper and a leather coated Sanipur insole.
+                </p>
+            </div>
+        </a>
+        <!-- Product Card: vertical -->
+        <a href="#" class="ProductCard ProductCard--grid">
+            <div class="ProductCard__img-wrapper">
+                <img src="https://www.etq-amsterdam.com/wp-content/uploads/2018/02/ETQ-Amsterdam-Low-2-Alloy-Ribbed-1-Side-1-2000x2000-c-bottom.jpg" alt="Shoe" class="ProductCard__img">
+            </div>
+
+            <div class="ProductCard__details">
+
+                <div class="ProductCard__details__header">
+                    <div class="ProductCard__titles">
+                        <h4 class="ProductCard__title">Chealsea Boot</h4>
+                        <h5 class="ProductCard__price">$72.99</h5>
+                    </div>
+
+                    <button class="IconBtn">
+                        <svg class="Icon Icon--medium Icon--colored">
+                            <use xlink:href="./src/img/icons/svg-sprite.svg#heart"></use>
+                        </svg>
+                    </button>
+                </div>
+
+                <p class="ProductCard__description">
+                    The Low 2 in Alloy grey is constructed with a premium nubuck leather upper and a leather coated Sanipur insole.
+                </p>
+            </div>
+        </a>
+        <!-- Product Card: vertical -->
+        <a href="#" class="ProductCard ProductCard--grid">
+            <div class="ProductCard__img-wrapper">
+                <img src="https://www.etq-amsterdam.com/wp-content/uploads/2018/02/ETQ-Amsterdam-Low-2-Alloy-Ribbed-1-Side-1-2000x2000-c-bottom.jpg" alt="Shoe" class="ProductCard__img">
+            </div>
+
+            <div class="ProductCard__details">
+
+                <div class="ProductCard__details__header">
+                    <div class="ProductCard__titles">
+                        <h4 class="ProductCard__title">Chealsea Boot</h4>
+                        <h5 class="ProductCard__price">$72.99</h5>
+                    </div>
+
+                    <button class="IconBtn">
+                        <svg class="Icon Icon--medium Icon--colored">
+                            <use xlink:href="./src/img/icons/svg-sprite.svg#heart"></use>
+                        </svg>
+                    </button>
+                </div>
+
+                <p class="ProductCard__description">
+                    The Low 2 in Alloy grey is constructed with a premium nubuck leather upper and a leather coated Sanipur insole.
+                </p>
+            </div>
+        </a>
+        <!-- Product Card: vertical -->
+        <a href="#" class="ProductCard ProductCard--grid">
+            <div class="ProductCard__img-wrapper">
+                <img src="https://www.etq-amsterdam.com/wp-content/uploads/2018/02/ETQ-Amsterdam-Low-2-Alloy-Ribbed-1-Side-1-2000x2000-c-bottom.jpg" alt="Shoe" class="ProductCard__img">
+            </div>
+
+            <div class="ProductCard__details">
+
+                <div class="ProductCard__details__header">
+                    <div class="ProductCard__titles">
+                        <h4 class="ProductCard__title">Chealsea Boot</h4>
+                        <h5 class="ProductCard__price">$72.99</h5>
+                    </div>
+
+                    <button class="IconBtn">
+                        <svg class="Icon Icon--medium Icon--colored">
+                            <use xlink:href="./src/img/icons/svg-sprite.svg#heart"></use>
+                        </svg>
+                    </button>
+                </div>
+
+                <p class="ProductCard__description">
+                    The Low 2 in Alloy grey is constructed with a premium nubuck leather upper and a leather coated Sanipur insole.
+                </p>
+            </div>
+        </a>
+
+
+    </div>
+
+    <div class="ProductSet ProductSet--list">
+        <!-- Product Card: horizontal -->
+        <a href="#" class="ProductCard ProductCard--list">
+            <div class="ProductCard__img-wrapper">
+                <img src="https://www.etq-amsterdam.com/wp-content/uploads/2018/02/ETQ-Amsterdam-Low-2-Alloy-Ribbed-1-Side-1-2000x2000-c-bottom.jpg" alt="Shoe" class="ProductCard__img">
+            </div>
+
+            <div class="ProductCard__details">
+
+                <div class="ProductCard__details__header">
+                    <div class="ProductCard__titles">
+                        <h4 class="ProductCard__title">Chealsea Boot</h4>
+                        <h5 class="ProductCard__price">$72.99</h5>
+                    </div>
+
+                    <button class="IconBtn">
+                        <svg class="Icon Icon--medium Icon--colored">
+                            <use xlink:href="./src/img/icons/svg-sprite.svg#heart"></use>
+                        </svg>
+                    </button>
+                </div>
+
+                <p class="ProductCard__description">
+                    The Low 2 in Alloy grey is constructed with a premium nubuck leather upper and a leather coated Sanipur insole.
+                </p>
+            </div>
+        </a>
+        <a href="#" class="ProductCard ProductCard--list">
+            <div class="ProductCard__img-wrapper">
+                <img src="https://www.etq-amsterdam.com/wp-content/uploads/2018/02/ETQ-Amsterdam-Low-2-Alloy-Ribbed-1-Side-1-2000x2000-c-bottom.jpg" alt="Shoe" class="ProductCard__img">
+            </div>
+
+            <div class="ProductCard__details">
+
+                <div class="ProductCard__details__header">
+                    <div class="ProductCard__titles">
+                        <h4 class="ProductCard__title">Chealsea Boot</h4>
+                        <h5 class="ProductCard__price">$72.99</h5>
+                    </div>
+
+                    <button class="IconBtn">
+                        <svg class="Icon Icon--medium Icon--colored">
+                            <use xlink:href="./src/img/icons/svg-sprite.svg#heart"></use>
+                        </svg>
+                    </button>
+                </div>
+
+                <p class="ProductCard__description">
+                    The Low 2 in Alloy grey is constructed with a premium nubuck leather upper and a leather coated Sanipur insole.
+                </p>
+            </div>
+        </a>
+        <a href="#" class="ProductCard ProductCard--list">
+            <div class="ProductCard__img-wrapper">
+                <img src="https://www.etq-amsterdam.com/wp-content/uploads/2018/02/ETQ-Amsterdam-Low-2-Alloy-Ribbed-1-Side-1-2000x2000-c-bottom.jpg" alt="Shoe" class="ProductCard__img">
+            </div>
+
+            <div class="ProductCard__details">
+
+                <div class="ProductCard__details__header">
+                    <div class="ProductCard__titles">
+                        <h4 class="ProductCard__title">Chealsea Boot</h4>
+                        <h5 class="ProductCard__price">$72.99</h5>
+                    </div>
+
+                    <button class="IconBtn">
+                        <svg class="Icon Icon--medium Icon--colored">
+                            <use xlink:href="./src/img/icons/svg-sprite.svg#heart"></use>
+                        </svg>
+                    </button>
+                </div>
+
+                <p class="ProductCard__description">
+                    The Low 2 in Alloy grey is constructed with a premium nubuck leather upper and a leather coated Sanipur insole.
+                </p>
+            </div>
+        </a>
+        <a href="#" class="ProductCard ProductCard--list">
+            <div class="ProductCard__img-wrapper">
+                <img src="https://www.etq-amsterdam.com/wp-content/uploads/2018/02/ETQ-Amsterdam-Low-2-Alloy-Ribbed-1-Side-1-2000x2000-c-bottom.jpg" alt="Shoe" class="ProductCard__img">
+            </div>
+
+            <div class="ProductCard__details">
+
+                <div class="ProductCard__details__header">
+                    <div class="ProductCard__titles">
+                        <h4 class="ProductCard__title">Chealsea Boot</h4>
+                        <h5 class="ProductCard__price">$72.99</h5>
+                    </div>
+
+                    <button class="IconBtn">
+                        <svg class="Icon Icon--medium Icon--colored">
+                            <use xlink:href="./src/img/icons/svg-sprite.svg#heart"></use>
+                        </svg>
+                    </button>
+                </div>
+
+                <p class="ProductCard__description">
+                    The Low 2 in Alloy grey is constructed with a premium nubuck leather upper and a leather coated Sanipur insole.
+                </p>
+            </div>
+        </a>
+        <a href="#" class="ProductCard ProductCard--list">
+            <div class="ProductCard__img-wrapper">
+                <img src="https://www.etq-amsterdam.com/wp-content/uploads/2018/02/ETQ-Amsterdam-Low-2-Alloy-Ribbed-1-Side-1-2000x2000-c-bottom.jpg" alt="Shoe" class="ProductCard__img">
+            </div>
+
+            <div class="ProductCard__details">
+
+                <div class="ProductCard__details__header">
+                    <div class="ProductCard__titles">
+                        <h4 class="ProductCard__title">Chealsea Boot</h4>
+                        <h5 class="ProductCard__price">$72.99</h5>
+                    </div>
+
+                    <button class="IconBtn">
+                        <svg class="Icon Icon--medium Icon--colored">
+                            <use xlink:href="./src/img/icons/svg-sprite.svg#heart"></use>
+                        </svg>
+                    </button>
+                </div>
+
+                <p class="ProductCard__description">
+                    The Low 2 in Alloy grey is constructed with a premium nubuck leather upper and a leather coated Sanipur insole.
+                </p>
+            </div>
+        </a>
+        <a href="#" class="ProductCard ProductCard--list">
+            <div class="ProductCard__img-wrapper">
+                <img src="https://www.etq-amsterdam.com/wp-content/uploads/2018/02/ETQ-Amsterdam-Low-2-Alloy-Ribbed-1-Side-1-2000x2000-c-bottom.jpg" alt="Shoe" class="ProductCard__img">
+            </div>
+
+            <div class="ProductCard__details">
+
+                <div class="ProductCard__details__header">
+                    <div class="ProductCard__titles">
+                        <h4 class="ProductCard__title">Chealsea Boot</h4>
+                        <h5 class="ProductCard__price">$72.99</h5>
+                    </div>
+
+                    <button class="IconBtn">
+                        <svg class="Icon Icon--medium Icon--colored">
+                            <use xlink:href="./src/img/icons/svg-sprite.svg#heart"></use>
+                        </svg>
+                    </button>
+                </div>
+
+                <p class="ProductCard__description">
+                    The Low 2 in Alloy grey is constructed with a premium nubuck leather upper and a leather coated Sanipur insole.
+                </p>
+            </div>
+        </a>
+        <a href="#" class="ProductCard ProductCard--list">
+            <div class="ProductCard__img-wrapper">
+                <img src="https://www.etq-amsterdam.com/wp-content/uploads/2018/02/ETQ-Amsterdam-Low-2-Alloy-Ribbed-1-Side-1-2000x2000-c-bottom.jpg" alt="Shoe" class="ProductCard__img">
+            </div>
+
+            <div class="ProductCard__details">
+
+                <div class="ProductCard__details__header">
+                    <div class="ProductCard__titles">
+                        <h4 class="ProductCard__title">Chealsea Boot</h4>
+                        <h5 class="ProductCard__price">$72.99</h5>
+                    </div>
+
+                    <button class="IconBtn">
+                        <svg class="Icon Icon--medium Icon--colored">
+                            <use xlink:href="./src/img/icons/svg-sprite.svg#heart"></use>
+                        </svg>
+                    </button>
+                </div>
+
+                <p class="ProductCard__description">
+                    The Low 2 in Alloy grey is constructed with a premium nubuck leather upper and a leather coated Sanipur insole.
+                </p>
+            </div>
+        </a>
+
+
+    </div>
+    <!-- END: Product Set -->
+    <!-- partial -->
+
+ 

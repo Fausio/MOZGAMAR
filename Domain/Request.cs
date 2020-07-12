@@ -16,6 +16,9 @@ namespace Domain
         public decimal FinalPrice { get; set; }
         public string Description { get; set; }
 
+        [Display(Name = "Imagem")]
+        public string RequestImage { get; set; }
+
         [Required]
         [Display(Name = "Categoria")]
         public int CategoryId { get; set; }
