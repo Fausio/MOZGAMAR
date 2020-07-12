@@ -17,6 +17,7 @@ namespace Domain
         public string Description { get; set; }
 
         [Required]
+        [Display(Name = "Categoria")]
         public int CategoryId { get; set; }
         public virtual Category Category { get; set; }
 
