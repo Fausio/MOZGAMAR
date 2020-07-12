@@ -120,9 +120,6 @@ namespace MOZGAMAR.Controllers
                     }
                     product.ProductImage = pic;
                 }
-
-
-
               
                 if (product.ProductId > 0)
                 {

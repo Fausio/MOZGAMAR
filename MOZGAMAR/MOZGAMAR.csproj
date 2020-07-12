@@ -1568,6 +1568,19 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\MyMainLayOut.css" />
+    <Content Include="Content\Navs\1\path\dist\index.html" />
+    <Content Include="Content\Navs\1\path\dist\script.js" />
+    <Content Include="Content\Navs\1\path\dist\style.css" />
+    <Content Include="Content\Navs\1\path\license.txt" />
+    <Content Include="Content\Navs\1\path\src\index.html" />
+    <Content Include="Content\Navs\1\path\src\script.js" />
+    <Content Include="Content\Navs\1\path\src\style.css" />
+    <Content Include="Content\Navs\2\path\dist\index.html" />
+    <Content Include="Content\Navs\2\path\dist\script.js" />
+    <Content Include="Content\Navs\2\path\dist\style.css" />
+    <Content Include="Content\Navs\2\path\license.txt" />
+    <Content Include="Content\Navs\2\path\src\index.html" />
+    <Content Include="Content\Navs\2\path\src\script.js" />
     <Content Include="Content\PagedList.css" />
     <Content Include="Content\request-set\dist\index.html" />
     <Content Include="Content\request-set\dist\style.css" />
@@ -1611,6 +1624,11 @@
     <Content Include="Images\banner2.jpg" />
     <Content Include="Images\gtx1080ti.jpg" />
     <Content Include="Images\pikabanner.jpg" />
+    <Content Include="Images\Requests\template\Console.png" />
+    <Content Include="Images\Requests\template\steam.png" />
+    <Content Include="Images\Requests\template\Steam1.png" />
+    <Content Include="Images\Requests\template\steam2.png" />
+    <Content Include="Images\Requests\template\steam3.png" />
     <Content Include="Images\school_uniforms_snipers_anime_simple_background_Kozaki_Yusuke_original_characters_4139x2328.jpg" />
     <Content Include="Images\searchIcon.png" />
     <Content Include="Images\slide1.jpg" />
@@ -1720,6 +1738,9 @@
     <Content Include="zoomproduct\src\style.css" />
     <Content Include="Content\request-set\README.markdown" />
     <Content Include="Content\request-set\src\style.scss" />
+    <Content Include="Content\Navs\1\path\README.markdown" />
+    <Content Include="Content\Navs\2\path\README.markdown" />
+    <Content Include="Content\Navs\2\path\src\style.scss" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <Content Include="quickbeam\dist\quickbeam.liquid" />
     <Content Include="quickbeam\dist\quickbeam.scss" />
@@ -1768,10 +1789,10 @@
     <Content Include="Views\Requests\Details.cshtml" />
     <Content Include="Views\Requests\Edit.cshtml" />
     <Content Include="Views\Requests\Index.cshtml" />
+    <Content Include="Views\Shared\_NavBarFixed.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Images\Requests\" />
     <Folder Include="obj\Release\" />
   </ItemGroup>
   <ItemGroup>
